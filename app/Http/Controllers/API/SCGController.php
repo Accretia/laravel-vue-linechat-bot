@@ -43,6 +43,7 @@ class SCGController extends Controller
         }
     }
     public function getHook(Request $request){
-        echo "XX";
+        http_response_code(200);
+        //echo "XX";
     }
 }
