@@ -15,6 +15,7 @@ $config = [
   <title>{{ config('app.name') }}</title>
 
   <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
+  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 </head>
 <body>
   <div id="app"></div>

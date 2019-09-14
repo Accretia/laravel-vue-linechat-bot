@@ -33,6 +33,11 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::post('store', 'API\ColorController@store');
         Route::delete('delete/{id}', 'API\ColorController@delete');
     });
+
+    Route::group(['prefix' => 'scg'] , function() {
+        Route::post('findString', 'API\SCGController@findString');
+        Route::get('restaurant', 'API\SCGController@findRestaurants');
+    });
     
 });
 

@@ -18,6 +18,12 @@
           <router-link :to="{name:'color'}" class="navbar-brand">
             Color
           </router-link>
+          <router-link :to="{name:'string'}" class="navbar-brand">
+            Find String
+          </router-link>
+          <a href="/scg/findRestaurants" class="navbar-brand">
+            Test
+          </a>
         </ul>
 
         <ul class="navbar-nav ml-auto">
