@@ -37,12 +37,13 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'scg'] , function() {
         Route::post('findString', 'API\SCGController@findString');
         Route::get('restaurant', 'API\SCGController@findRestaurants');
-        Route::get('gethook', 'API\SCGController@getHook');
+        Route::any('sendmessage', 'API\SCGController@sendMessage');
     });
     
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
+    Route::get('/scg/gethook', 'API\SCGController@getHook');
     Route::post('login', 'Auth\LoginController@login');
     Route::post('register', 'Auth\RegisterController@register');
 
