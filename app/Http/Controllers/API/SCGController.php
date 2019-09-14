@@ -42,4 +42,7 @@ class SCGController extends Controller
             return Response::json($result);
         }
     }
+    public function getHook(Request $request){
+        echo "XX";
+    }
 }

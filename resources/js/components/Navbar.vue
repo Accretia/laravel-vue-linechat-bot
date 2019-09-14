@@ -21,9 +21,12 @@
           <router-link :to="{name:'string'}" class="navbar-brand">
             Find String
           </router-link>
-          <a href="/scg/findRestaurants" class="navbar-brand">
-            Test
+          <a href="/api/scg/restaurant" target="_blank" class="navbar-brand">
+            Restaurants
           </a>
+          <router-link :to="{name:'line'}" class="navbar-brand">
+            Line
+          </router-link>
         </ul>
 
         <ul class="navbar-nav ml-auto">

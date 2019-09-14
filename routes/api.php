@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'scg'] , function() {
         Route::post('findString', 'API\SCGController@findString');
         Route::get('restaurant', 'API\SCGController@findRestaurants');
+        Route::get('gethook', 'API\SCGController@getHook');
     });
     
 });
