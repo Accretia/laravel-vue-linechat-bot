@@ -25,6 +25,12 @@ trait LineTrait
         //echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
     }
 
+    public static function getReplyMessage($index){
+
+        $reply = ["My name is Kittinun Aschasewin" , "I'm Head of Developer at Merchant Partners" , "This for SCG-Test assignment"];
+        return$reply[$index];
+    }
+
 
 
 }

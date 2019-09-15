@@ -53,11 +53,10 @@ class SCGController extends Controller
         $tokens = Message::store($data);
         if(is_array($tokens) && sizeof($tokens) > 0){
             foreach ($tokens as $token){
-                LineTrait::replyMessage($token , "How are you ?");
+                LineTrait::replyMessage($token , LineTrait::getReplyMessage(rand(0,2)));
             }
         }
     }
-
 
     public function sendMessage(Request $request){
 
