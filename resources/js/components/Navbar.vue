@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
+      <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand" style="color:orangered">
         {{ appName }}
       </router-link>
 
@@ -11,7 +11,6 @@
 
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <locale-dropdown />
           <router-link :to="{name:'string'}" class="navbar-brand">
             Find String
           </router-link>
