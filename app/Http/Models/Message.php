@@ -18,6 +18,7 @@ class Message extends Model
                     $message = new Message();
                     $message->user_id = $event->source->userId;
                     $message->message = $event->message->text;
+                    $message->reply_token = $event->replyToken;
                     $message->is_reply = false;
                     $message->save();
                 }
