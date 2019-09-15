@@ -12,7 +12,8 @@
         "laravel/socialite": "^4.0",
         "laravel/tinker": "^1.0",
         "tymon/jwt-auth": "^1.0.0-rc.4.1",
-        "linecorp/line-bot-sdk": "*"
+        "linecorp/line-bot-sdk": "*",
+        "league/flysystem": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

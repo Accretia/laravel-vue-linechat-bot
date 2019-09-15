@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use League\Flysystem\File;
+use League\Flysystem\Filesystem;
 use Response;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
@@ -42,11 +45,15 @@ class SCGController extends Controller
             return Response::json($result);
         }
     }
+
     public function getHook(Request $request){
+        $data = json_decode(file_get_contents('php://input'));
         file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
-        //http_response_code(200);
-        //echo "XX";
+        Message::store($data);
+
+
     }
+
 
     public function sendMessage(Request $request){
 
@@ -55,6 +62,14 @@ class SCGController extends Controller
         echo "XXX";
         print_r($datas);
         die;*/
+        foreach(file('log.txt') as $line) {
+            //print_r($line);
+            $detail = json_decode($line);
+            print_r($detail);
+            // loop with $line for each line of yourfile.txt
+        }
+        die;
+
         $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('Ttf59LhSTSvL5nTfKLYDvZjch6WmP/eqmS7LgLtdAX/l4NsCYUkGMtAjZkZ6ByT8J3BloN8SxAkO54KPyrg1uHWW+TLEZl8uj0ZLpArMdRPlOKyuL2bwwtVRxDMwUqHG9QY2MBpTOP4yna4nMPhz+1GUYhWQfeY8sLGRXgo3xvw=');
         $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'd3e8c72ddbf61a97e5a77b1402568545']);
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
