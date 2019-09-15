@@ -65,9 +65,7 @@ export default {
     
       handleSubmit() {
         // Exit when the form isn't valid
-        if (!this.checkFormValidity()) {
-          return
-        }
+    
         // Push the name to submitted names
 
         axios.post('/api/scg/findString', {

@@ -4,6 +4,7 @@
     <list default="true" id="f73a7f6b-3252-4d05-aedf-722f9e7f16b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/logs/nginx/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nginx/access.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/nginx/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nginx/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/string.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/string.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/Navbar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+            <state relative-caret-position="630">
+              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#router-link#0;n#div#0;n#nav#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -293,12 +294,12 @@
       <updated>1567434029346</updated>
       <workItem from="1567434030926" duration="4875000" />
       <workItem from="1568377942510" duration="29000" />
-      <workItem from="1568479655129" duration="13280000" />
+      <workItem from="1568479655129" duration="13413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18184000" />
+    <option name="totallyTimeSpent" value="18317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="837" extended-state="6" />
@@ -470,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Navbar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        <state relative-caret-position="630">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#router-link#0;n#div#0;n#nav#0;n#template#0;n#!!top" expanded="true" />
           </folding>
