@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Util\LineTrait;
 use App\Http\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -49,9 +50,12 @@ class SCGController extends Controller
     public function getHook(Request $request){
         $data = json_decode(file_get_contents('php://input'));
         file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
-        Message::store($data);
-
-
+        $tokens = Message::store($data);
+        if(is_array($tokens) && sizeof($tokens) > 0){
+            foreach ($tokens as $token){
+                LineTrait::replyMessage($token , "How are you ?");
+            }
+        }
     }
 
 
