@@ -31,6 +31,13 @@
 
 ## Usage
 
+Update your .env file
+DB_CONNECTION=mysql
+DB_HOST=<DATABASE IP>
+DB_PORT=<DATABASEPORT>
+DB_DATABASE=<DATABASENAME>
+DB_USERNAME=<USERNAME>
+DB_PASSWORD=<PASSWORD>
 #### Development
 
 ```bash
