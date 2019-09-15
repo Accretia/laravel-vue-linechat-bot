@@ -12,12 +12,6 @@
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <locale-dropdown />
-          <router-link :to="{name:'products'}" class="navbar-brand">
-            Products
-          </router-link>
-          <router-link :to="{name:'color'}" class="navbar-brand">
-            Color
-          </router-link>
           <router-link :to="{name:'string'}" class="navbar-brand">
             Find String
           </router-link>
@@ -26,6 +20,9 @@
           </a>
           <router-link :to="{name:'line'}" class="navbar-brand">
             Line
+          </router-link>
+          <router-link :to="{name:'resume'}" class="navbar-brand">
+            Resume
           </router-link>
         </ul>
 

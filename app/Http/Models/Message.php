@@ -3,6 +3,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 
 class Message extends Model
@@ -36,8 +37,39 @@ class Message extends Model
     }
 
     public static function getAllUser(){
-        $users = Message::select("user_id")->distinct();
-        return $users;
+        $users = Message::select("user_id")->distinct()->get();
+        if((Cache::has('allUsers'))){
+            if(sizeof(Cache::get('allUsers')) == sizeof($users)){
+                return Cache::get('allUsers');
+            }
+            else{
+                if(sizeof($users) > 0){
+                    $userIdList = array();
+                    foreach ($users as $user){
+                        $userIdList[] = $user["user_id"];
+                    }
+                    Cache::put('allUsers', $userIdList, 3600);
+                    return $userIdList;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+
+        else{
+            if(sizeof($users) > 0){
+                $userIdList = array();
+                foreach ($users as $user){
+                    $userIdList[] = $user["user_id"];
+                }
+                Cache::put('allUsers', $userIdList, 3600);
+                return $userIdList;
+            }
+            else{
+                return false;
+            }
+        }
     }
 
     public static function updateFlagReply($replyToken){

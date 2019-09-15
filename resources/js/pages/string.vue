@@ -60,11 +60,7 @@ export default {
       this.inputs.splice(index,1)
     },
       
-      checkFormValidity() {
-        const valid = this.$refs.form.checkValidity()
-        this.nameState = valid ? 'valid' : 'invalid'
-        return valid
-      },
+      
       
     
       handleSubmit() {

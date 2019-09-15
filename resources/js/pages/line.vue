@@ -2,7 +2,18 @@
   <card :title="$t('Line Message API')">
     
     
-    XXX
+    <div align="center">
+      <img src="../../../public/images/qr.png">
+      <p>Please add this qr for join us</p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <textarea placeholder="Type anythings to Broadcast" v-model="message" class="form-control" name="message" ref="message"></textarea>
+        <button type="button" ref="sendmessage" class="btn btn-primary" :disabled="clickable" style="float:right;margin-top:10px;" @click="sendMessage">Broadcast</button>
+      </div>
+    </div>
+    <p style="color:red" v-if="!this.isSuccess && this.isSuccess!=''">Broadcast Failed</p>
+    <p v-else-if="this.isSuccess" style="color:green"> Your messages is Broadcast !!</p>
   </card>
 
 </template>
@@ -13,14 +24,25 @@ export default {
   middleware: "auth",
   data() {
     return {
-      
-      inputs: [],
+      message: "",
       results : "",
-      Stringstate : "",
+      isSuccess : "",
+      isDisable : false,
     };
   },
 
-  
+  computed: {
+    clickable() {
+        // if something
+        if(this.isDisable){
+          return true;
+        }
+        else{
+          return false;
+        }
+    }
+  },
+
   created() {
     //this.fetchData();
   },
@@ -29,48 +51,35 @@ export default {
     return { title: this.$t("Find String") };
   },
   methods: {
-
-      addRow() {
-      this.inputs.push({
-        string: ''
-
-      })
-    },
-    deleteRow(index) {
-      this.inputs.splice(index,1)
-    },
       
-      checkFormValidity() {
-        const valid = this.$refs.form.checkValidity()
-        this.nameState = valid ? 'valid' : 'invalid'
-        return valid
-      },
-      
-    
-      handleSubmit() {
-        // Exit when the form isn't valid
-        if (!this.checkFormValidity()) {
-          return
+      sendMessage(){
+        if(!this.message){
+          this.$refs.message.focus()
+          return false
         }
-        // Push the name to submitted names
-
-        axios.post('/api/scg/findString', {
-          string: this.inputs
-        })
+        else{
+          this.isDisable = true;
+          
+          axios.post('/api/scg/sendmessage', {
+            message: this.message
+          })
         .then(response => {
           if(response.status == 200){
-            this.Stringstate = true
-            this.results = response.data;
+            this.isSuccess = true
+            this.message = "";
+            this.isDisable = false;
           }
           else{
-              this.Stringstate = false
+              this.isSuccess = false
+              this.isDisable = false;
           }
         })
         .catch(function (error) {
+          this.isDisable = false;
           console.log(error);
         });
-      },
-    
+        } 
+      }
     }
 };
 </script>

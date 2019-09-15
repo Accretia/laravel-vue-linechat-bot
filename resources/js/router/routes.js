@@ -16,6 +16,7 @@ export default [
   { path: '/color', name: 'color', component: page('color.vue') },
   { path: '/string', name: 'string', component: page('string.vue') },
   { path: '/line', name: 'line', component: page('line.vue') },
+  { path: '/resume', name: 'resume', component: page('resume.vue') },
   { path: '/settings',
     component: page('settings/index.vue'),
     children: [
