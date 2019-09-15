@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
-    Route::get('/scg/gethook', 'API\SCGController@getHook');
+    Route::any('/scg/gethook', 'API\SCGController@getHook');
     Route::post('login', 'Auth\LoginController@login');
     Route::post('register', 'Auth\RegisterController@register');
 
