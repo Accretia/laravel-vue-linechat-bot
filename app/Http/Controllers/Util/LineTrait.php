@@ -22,7 +22,6 @@ trait LineTrait
         if($response->getHTTPStatus() == 200){
             Message::updateFlagReply($replyToken);
         }
-        //echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
     }
 
     public static function getReplyMessage($index){
@@ -37,7 +36,6 @@ trait LineTrait
         $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'd3e8c72ddbf61a97e5a77b1402568545']);
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
         $response = $bot->multicast($getUsers, $textMessageBuilder);
-        //echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
         if($response->getHTTPStatus() == 200){
             return true;
         }

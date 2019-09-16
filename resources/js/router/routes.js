@@ -12,8 +12,6 @@ export default [
   { path: '/email/verify/:id', name: 'verification.verify', component: page('auth/verification/verify.vue') },
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
   { path: '/home', name: 'home', component: page('home.vue') },
-  { path: '/products', name: 'products', component: page('product.vue') },
-  { path: '/color', name: 'color', component: page('color.vue') },
   { path: '/string', name: 'string', component: page('string.vue') },
   { path: '/line', name: 'line', component: page('line.vue') },
   { path: '/resume', name: 'resume', component: page('resume.vue') },

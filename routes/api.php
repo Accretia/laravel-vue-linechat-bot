@@ -23,23 +23,14 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
 
-    Route::get('products', 'API\ProductController@getProductWithOffset');
-    Route::get('product_detail/{id}', 'API\ProductController@getProductDetail');
-    Route::get('search_product', 'API\ProductController@searchProduct');
-    Route::get('brands', 'API\ProductController@getBrands');
-    Route::get('categories', 'API\ProductController@getCategories');
-    Route::group(['prefix' => 'colors'] , function() {
-        Route::get('list', 'API\ColorController@getColors');
-        Route::post('store', 'API\ColorController@store');
-        Route::delete('delete/{id}', 'API\ColorController@delete');
-    });
+
 
     Route::group(['prefix' => 'scg'] , function() {
         Route::post('findString', 'API\SCGController@findString');
         Route::get('restaurant', 'API\SCGController@findRestaurants');
         Route::post('sendmessage', 'API\SCGController@sendMessage');
     });
-    
+
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
