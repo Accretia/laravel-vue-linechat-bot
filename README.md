@@ -29,6 +29,10 @@
 - `php artisan migrate`
 - `npm install`
 
+## Demo
+https://scg-test.mpa.tools
+
+
 ## Usage
 
 Update your .env file
