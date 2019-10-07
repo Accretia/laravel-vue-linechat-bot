@@ -1,14 +1,15 @@
 <template>
   <card :title="$t('Line Message API')">
-    
-    
-    <div align="center">
-      <img src="../../../public/images/qr.png">
-      <p>Please add this qr for join us</p>
-    </div>
     <div class="row">
-      <div class="col-md-12">
-        <textarea placeholder="Type anythings to Broadcast" v-model="message" class="form-control" name="message" ref="message"></textarea>
+      <div class="col-md-6">
+        <div align="center">
+          <img src="../../../public/images/qr.png">
+          <p class="font-small">Please add QR code for chat with bot</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="font-small">Add QR and chat with bot before broadcast</label>
+        <textarea placeholder="Type anythings to Broadcast" v-model="message" class="form-control fix-height" name="message" ref="message"></textarea>
         <button type="button" ref="sendmessage" class="btn btn-primary" :disabled="clickable" style="float:right;margin-top:10px;" @click="sendMessage">Broadcast</button>
       </div>
     </div>
@@ -51,7 +52,7 @@ export default {
     return { title: this.$t("Find String") };
   },
   methods: {
-      
+
       sendMessage(){
         if(!this.message){
           this.$refs.message.focus()
@@ -59,7 +60,7 @@ export default {
         }
         else{
           this.isDisable = true;
-          
+
           axios.post('/api/scg/sendmessage', {
             message: this.message
           })
@@ -78,8 +79,16 @@ export default {
           this.isDisable = false;
           console.log(error);
         });
-        } 
+        }
       }
     }
 };
 </script>
+<style>
+  .font-small{
+    font-size: 14px;
+  }
+  .fix-height{
+    min-height: 150px;
+  }
+</style>
