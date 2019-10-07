@@ -1,4 +1,4 @@
-# scg-test
+# Line Chatbot & Google Place API
 
 
 <a href="https://travis-ci.org/cretueusebiu/laravel-vue-spa"><img src="https://travis-ci.org/cretueusebiu/laravel-vue-spa.svg?branch=master" alt="Build Status"></a>
